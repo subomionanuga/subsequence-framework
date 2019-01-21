@@ -21,14 +21,16 @@ describe('Square', function() {
   // })
 
   testWill('check that size is an integer', function() {
-     var error = null
-     try {
-       new Square('a')
-     }
-     catch(e){
-       error = e.message
-     }
-     expect(error).toThrow('argument is not a number')
+     // var error = null
+     // try {
+     //   new Square('a')
+     // }
+     // catch(e){
+     //   error = e.message
+     // }
+     expect(function() {
+       square = new Square('a')
+     }).toThrow('argument is not a number')
    })
 
 })
