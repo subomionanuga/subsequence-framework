@@ -14,4 +14,9 @@ describe('Square', function() {
     square = new Square(5)
     expect(square.area()).toBeEqualTo(25)
   })
+
+  testWill('throw an error', function(){
+    square = new Square(-1)
+    expect(square.size).toThrowError()
+  })
 })
