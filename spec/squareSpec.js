@@ -1,6 +1,6 @@
 describe('Square', function() {
   var square
-
+  var squareError
   // beforeEach(function() {
   //   square = new Square(5)
   // })
@@ -17,15 +17,17 @@ describe('Square', function() {
 
 
   testWill('check that size is an integer', function() {
-     expect(function() {
-       square = new Square('a')
-     }).toThrow('argument is not a number')
+    squareError = function() {
+      square = new Square('a')
+    }
+     expect(squareError).toThrow('argument is not a number')
    })
 
    testWill('check that size is positive', function() {
-     expect(function() {
+     squareError = function() {
        square = new Square(-1)
-     }).toThrow('size should be a positive number')
+     }
+     expect(squareError).toThrow('size should be a positive number')
    })
 
 })
