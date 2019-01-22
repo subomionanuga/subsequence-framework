@@ -15,22 +15,17 @@ describe('Square', function() {
     expect(square.area()).toBeEqualTo(25)
   })
 
-  // testWill('throw an error', function(){
-  //   square = new Square(-1)
-  //   expect(square.size).toThrowError()
-  // })
 
   testWill('check that size is an integer', function() {
-     // var error = null
-     // try {
-     //   new Square('a')
-     // }
-     // catch(e){
-     //   error = e.message
-     // }
      expect(function() {
        square = new Square('a')
      }).toThrow('argument is not a number')
+   })
+
+   testWill('check that size is positive', function() {
+     expect(function() {
+       square = new Square(-1)
+     }).toThrow('size should be a positive number')
    })
 
 })
